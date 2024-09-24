@@ -21,7 +21,7 @@ namespace RedisExample.Controllers
             return Ok(await _redisService.GetValueAsync(key));
         }
 
-        [HttpPost("set")]
+        [HttpPost]
         public async Task<IActionResult> Set([FromBody] RedisRequestModel redisCacheRequestModel)
         {
             await _redisService.SetValueAsync(redisCacheRequestModel.Key, redisCacheRequestModel.Value);
